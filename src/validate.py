@@ -1,5 +1,4 @@
 import requests
-import multiprocessing
 
 
 def validate_proxy(proxy):

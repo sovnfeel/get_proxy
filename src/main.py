@@ -14,8 +14,7 @@ header = {
 
 
 def parse_page_table(*, page_number: int) -> list:
-    print(f"Начинаем собирать информацию с {page_number + 1} страницы...")
-    response = requests.get(f"{link}&page={page_number + 1}", headers=header).text
+    response = requests.get(f"{link}&page={page_number}", headers=header).text
     soup = BeautifulSoup(response, 'lxml')
 
     block_values = soup.find('div', class_ = "style_list__e4Th8").find('table').find('tbody')
@@ -25,6 +24,7 @@ def parse_page_table(*, page_number: int) -> list:
 
 
 def handler(*, value) -> None:
+    print(f"Начинаем собирать информацию с {page} страницы...")
     for v in value:
         current_v = v.find_all('td')
         get_ip = current_v[0].text
@@ -35,11 +35,16 @@ def handler(*, value) -> None:
 
 if __name__ == "__main__":
     proxy_set = set()
-    page_count = 4
-    
-    for page in range(page_count):
+
+    page = 1
+    while True:
         page_table = parse_page_table(page_number=page)
-        handler(value=page_table)
+        
+        if page_table == []:
+            break
+        else:
+            handler(value=page_table)
+            page += 1
 
     with open ('proxy_list.txt', "w") as file:
             file.write("")
