@@ -15,6 +15,7 @@ def main():
     free_proxy_only.parser("https://proxyfreeonly.com/ru/free-proxy-list?protocols=http",
                         "&page=", "style_list__e4Th8")
 
+    print("Сохранено в файл result.txt")
 
 if __name__ == "__main__":
     main()

@@ -23,7 +23,7 @@ class ParseProxyPagesTables(ParseProxyTable):
 
                 page += 1
 
-        print("Начинаем валидацию. Доступные адреса будут записаны в файл...")
+        print("Информация собрана, начинаем валидацию.\nДоступные адреса будут записаны в файл...")
         with multiprocessing.Pool(multiprocessing.cpu_count()) as process:
             process.map(self.validate_proxy, list(self.proxy_set))
     

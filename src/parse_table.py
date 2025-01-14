@@ -35,7 +35,6 @@ class ParseProxyTable(ParseProxy):
             get_port = get_connection_info.get("get_port")
 
             self.proxy_set.add(f"{get_ip}:{get_port}")
-            print(f"Значение {get_ip}:{get_port} успешно добавлено!")
 
     def get_connection_info(self, current_v, td_ip_number, td_port_number):
         get_ip = current_v[td_ip_number].text

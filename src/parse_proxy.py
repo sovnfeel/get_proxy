@@ -29,7 +29,7 @@ class ParseProxy():
             print(f"{proxy} ✅")
             self.add_proxy_to_file(proxy)
         except:
-            print(f"Прокси {proxy} не валидный!")
+            pass
     
     def add_proxy_to_file(self, proxy):
         with open ('result.txt', "a") as file:
