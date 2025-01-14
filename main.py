@@ -10,8 +10,8 @@ def main():
 
     proxy_lis.clear_result_file()
     
-    # proxy_lis.parser("https://www.proxy-list.download/api/v1/get?type=http")
-    # free_proxy_list.parser("https://free-proxy-list.net/", "table-responsive")
+    proxy_lis.parser("https://www.proxy-list.download/api/v1/get?type=http")
+    free_proxy_list.parser("https://free-proxy-list.net/", "table-responsive")
     free_proxy_only.parser("https://proxyfreeonly.com/ru/free-proxy-list?protocols=http",
                         "&page=", "style_list__e4Th8")
 
