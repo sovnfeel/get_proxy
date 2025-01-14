@@ -12,9 +12,6 @@ class ParseProxy():
         print(f"Просматриваем ресурс {link}...")
         response = requests.get(link, headers=self.header).text
         self.proxy_set = response.strip().split('\r\n')
-
-        # with open ('result.txt', "w") as file:
-        #     file.write("")
         
         print("Информация собрана, начинаем валидацию.\nДоступные адреса будут записаны в файл...")
         with multiprocessing.Pool(multiprocessing.cpu_count()) as process:
